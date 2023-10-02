@@ -1,1 +1,3 @@
 include ':plugin', ':example', ':example-module'
+
+project(':example-module').name = 'example_module'
