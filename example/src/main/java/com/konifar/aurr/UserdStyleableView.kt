@@ -15,7 +15,7 @@ class UserdStyleableView @JvmOverloads constructor(
     init {
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.UsedStyleable, 0, 0)
         try {
-            test = ta.getString(R.styleable.UsedStyleable_usedString)
+            test = ta.getString(R.styleable.UsedStyleable_usedString).orEmpty()
         } finally {
             ta.recycle()
         }
