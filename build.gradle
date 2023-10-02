@@ -15,12 +15,16 @@ buildscript {
     }
 }
 
-allprojects {
+subprojects {
     repositories {
         google()
         mavenCentral()
         mavenLocal()
         gradlePluginPortal()
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs << "-Xmaxerrs" << "300"
     }
 }
 
