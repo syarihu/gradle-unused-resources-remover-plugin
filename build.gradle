@@ -17,11 +17,23 @@ buildscript {
 }
 
 subprojects {
+    apply plugin: 'maven-publish'
+
     repositories {
         google()
         mavenCentral()
         mavenLocal()
         gradlePluginPortal()
+    }
+
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'gradle.plugin.com.github.syarihu.gradle'
+                artifactId = 'unused-resources-remover'
+                version = '0.3.4'
+            }
+        }
     }
 
     tasks.withType(JavaCompile).configureEach {

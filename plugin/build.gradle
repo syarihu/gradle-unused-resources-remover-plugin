@@ -20,26 +20,14 @@ archivesBaseName = 'unused-resources-remover'
 group = 'com.github.syarihu.gradle'
 version = '0.3.4'
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                groupId = 'com.github.syarihu.gradle'
-                artifactId = 'unused-resources-remover'
-                version = '0.3.4'
-            }
-        }
-    }
-}
-
 gradlePlugin {
-    website = 'https://github.com/konifar/gradle-unused-resources-remover-plugin'
-    vcsUrl = 'https://github.com/konifar/gradle-unused-resources-remover-plugin'
+    website = 'https://github.com/syarihu/gradle-unused-resources-remover-plugin'
+    vcsUrl = 'https://github.com/syarihu/gradle-unused-resources-remover-plugin'
     description = 'Gradle Plugin that removes unused resources in Android project'
 
     plugins {
         locateApkPlugin {
-            id = 'com.github.konifar.gradle.unused-resources-remover'
+            id = 'com.github.syarihu.gradle.unused-resources-remover'
             displayName = 'Android Unused Resources Remover Plugin'
             tags.set(['android'])
             implementationClass = 'com.github.konifar.gradle.remover.UnusedResourcesRemoverPlugin'
