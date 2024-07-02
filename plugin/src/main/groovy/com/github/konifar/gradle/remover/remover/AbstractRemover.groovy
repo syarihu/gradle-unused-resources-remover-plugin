@@ -77,10 +77,14 @@ abstract class AbstractRemover {
         moduleSrcDirs.collect { new File(it) }
                 .findAll { it.exists() }
                 .each { srcDirFile ->
-            srcDirFile.eachFileMatch(FILE_TYPE_FILTER) { f ->
-                stringBuilder.append(f.text.replaceAll('\n', '').replaceAll(' ', ''))
-            }
-        }
+                    srcDirFile.eachFileMatch(FILE_TYPE_FILTER) { f ->
+                        if (!f.isDirectory()) {
+                            stringBuilder.append(f.text.replaceAll('\n', '').replaceAll(' ', ''))
+                        } else {
+                            ColoredLogger.log "Skip '${f.path}' because it is a directory."
+                        }
+                    }
+                }
 
         moduleSrcDirs
                 .collect { new File("${it}/src") }
