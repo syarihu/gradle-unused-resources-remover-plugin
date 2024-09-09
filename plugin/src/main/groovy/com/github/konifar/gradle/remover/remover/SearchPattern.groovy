@@ -24,7 +24,8 @@ class SearchPattern {
                 def pattern = /(@(${resourceName}|${resourceName}StateList)\/${target}[\s!"#\$%&'()\*\+\-\,\\\/:;<=>?@\[\\\]`{|}~])|(R\.${resourceName}\.${target})|(${toCamelCase(target)}Binding)/
                 return pattern
             default:
-                def pattern = /(@(${resourceName}|${resourceName}StateList)\/${target}[\s!"#\$%&'()\*\+\-\,\\\/:;<=>?@\[\\\]`{|}~])|(R\.${resourceName}\.${target})/
+                // Considered cashapp/paraphrase
+                def pattern = /(@(${resourceName}|${resourceName}StateList)\/${target}[\s!"#\$%&'()\*\+\-\,\\\/:;<=>?@\[\\\]`{|}~])|(R\.${resourceName}\.${target})|(FormattedResources\.${target}\(.+\))/
                 return pattern
         }
     }
