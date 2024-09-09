@@ -48,4 +48,9 @@
         android:layout_height="wrap_content"
         android:src="@drawable/used_in_layout_as_nine_patch_drawable" />
 
+    <TextView
+        android:id="@+id/used_parahrase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>
