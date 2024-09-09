@@ -7,4 +7,6 @@
     <string name="used_font_awesome2">&#xf12a;</string>
     <string name="used_font_japanese">使っている文字</string>
     <string name="unused">Unused</string>
+    <string name="paraphrase">count: {count}</string>
+    <string name="unused_paraphrase">count: {count}</string>
 </resources>

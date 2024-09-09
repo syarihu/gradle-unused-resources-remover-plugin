@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import app.cash.paraphrase.getString
 
 class MainFragment : Fragment() {
 
@@ -27,6 +28,8 @@ class MainFragment : Fragment() {
         textView.setPadding(padding, padding, padding, padding)
 
         AnimatorInflater.loadAnimator(context, R.animator.used_in_kotlin_animator)
+        view.findViewById<TextView>(R.id.used_parahrase).text =
+            resources.getString(FormattedResources.paraphrase(123))
 
         return view
     }

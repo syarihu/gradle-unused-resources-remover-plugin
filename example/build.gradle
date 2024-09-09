@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.konifar.gradle.unused-resources-remover'
+apply plugin: 'app.cash.paraphrase'
 
 android {
     namespace = 'com.konifar.aurr'
@@ -10,7 +11,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        minSdk 19
+        minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0.0"

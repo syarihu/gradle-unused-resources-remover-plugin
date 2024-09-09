@@ -22,19 +22,25 @@ class StringXmlValueRemoverTest extends Specification {
         XmlValueRemover.isPatternMatched(fileText, pattern) == expected
 
         where:
-        fileText              | expected
-        "R.string.app_name"   | true
-        "@string/app_name\""  | true
-        "@string/app_name<"   | true
-        "@string/app_name("   | true
-        "@string/app_name)"   | true
-        "@string/app_name}"   | true
-        "@string/app_name:"   | true
-        "@string/app_name "   | true
-        "@string/app_name\n"  | true
-        "@string/app_name"    | false
-        "R.string.app"        | false
-        "@string/app_name2\"" | false
-        "@style/app_name"     | false
+        fileText                               | expected
+        "R.string.app_name"                    | true
+        "@string/app_name\""                   | true
+        "@string/app_name<"                    | true
+        "@string/app_name("                    | true
+        "@string/app_name)"                    | true
+        "@string/app_name}"                    | true
+        "@string/app_name:"                    | true
+        "@string/app_name "                    | true
+        "@string/app_name\n"                   | true
+        "FormattedResources.app_name(123)"     | true
+        "FormattedResources.app_name(\"123\")" | true
+        "@string/app_name"                     | false
+        "R.string.app"                         | false
+        "@string/app_name2\""                  | false
+        "@style/app_name"                      | false
+        "FormattedResources.app_name()"        | false
+        "FormattedResources.app_name("         | false
+        "FormattedResources.app_name)"         | false
+        "FormattedResources.app_name"          | false
     }
 }
